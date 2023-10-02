@@ -4,6 +4,7 @@ import './ratings.css'
 const Ratings = () => {
   return (
     <>
+    <div className='' style={{display:'flex' , flexDirection:'column' , justifyContent:'center' , alignItems:'center' , height:'100vh'}}>
     <form className="rating">
         <div className="rating__stars">
           <input id="rating-1" className="rating__input rating__input-1" type="radio" name="rating" value="1" />
@@ -122,7 +123,16 @@ const Ratings = () => {
           <p className="rating__display" data-rating="4" hidden>Good</p>
           <p className="rating__display" data-rating="5" hidden>Excellent</p>
         </div>
+        <br/>
+        <br/>
+        <textarea placeholder='your review' className='area'>
+       
+        </textarea>
+        <button className='btn' style={{width:'100%' , background:'black' , color:'white' , borderRadius:'10px' , padding:'8px'}}>SUBMIT</button>
+      
       </form>
+      </div>
+      
     </>
   )
 }

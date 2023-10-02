@@ -1,6 +1,7 @@
 import React, { useState  , useEffect} from 'react';
 import ImageUpload from './components/ProfileUpload';
 import ChooseCarousel from './components/ChooseCarousel';
+import { useNavigate } from 'react-router-dom';
 import NavBar from './components/Navbar';
 
 
@@ -10,7 +11,7 @@ const MainPage = () => {
   const [isProfileOpen, setIsProfileOpen] = useState(false);
   const [profilePic, setProfilePic] = useState(null);
   const [newProfilePic, setNewProfilePic] = useState(null);
-  
+  const navigate = useNavigate();
   useEffect(() => {
     const observer = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
@@ -93,7 +94,7 @@ const MainPage = () => {
     Our mission is to empower the youth of India, specifically children aged 8-16, by equipping them with knowledge, confidence, and a supportive community to understand and assert their rights. Through a comprehensive platform, we aim to catalyze a positive transformation in the lives of these young individuals.
     </div>
     
-    <button class="mt-4 bg-orange-500 rounded-md p-2 text-white">Start Module</button>
+    <button class="mt-4 bg-orange-500 rounded-md p-2 text-white" onClick={()=> navigate('/quiz')}>Start Module</button>
    </div>
     </div>
     
@@ -179,8 +180,11 @@ const MainPage = () => {
 <p className="mt-[-5rem] text-white font-medium">Terms Of Use</p>
 <p className="text-center mt-[-5rem]  text-white font-medium">Safety And Education</p>
 <p className="mt-[-5rem] text-white font-medium">Legal Authorities</p>
+<p className="mt-[-5rem] text-white font-medium">Site Map</p>
 <p className="mt-[-5rem] text-white font-medium">+91 044 2374 2098</p>
 </div>
+    
+
     </>
   );
 };

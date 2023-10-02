@@ -4,7 +4,7 @@ const SuccesContact = () => {
   return (
     <>
     <div className="flex flex-col justify-center items-center min-h-screen">
-    <img src="success.gif" alt="Animated GIF" class="w-16 h-16 rounded-full"/>
+    <img src="public/images/success.gif" alt="Animated GIF" class="w-16 h-16 rounded-full"/>
   
   <h1 className="text-center mt-4 text-2xl font-semibold sm:text-3xl lg:text-4xl">
     WOHOO !

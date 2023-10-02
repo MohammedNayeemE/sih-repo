@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-
+import { useNavigate } from 'react-router-dom';
 const questions = [
   {
     id: 1,
@@ -17,6 +17,7 @@ const questions = [
 ];
 
 const Quiz = () => {
+  const navigate = useNavigate();
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [userAnswers, setUserAnswers] = useState(Array(questions.length).fill(''));
   const [totalScore, setTotalScore] = useState(null);
@@ -124,6 +125,7 @@ const Quiz = () => {
           ) : (
             <button
               className="bg-blue-500 hover:bg-blue-600 px-4 py-2 text-white rounded transition duration-300"
+              onClick={()=> navigate('/ratings') }
             >
               Submit
             </button>
@@ -131,7 +133,7 @@ const Quiz = () => {
         </div>
       </div>
       </div>
-      <Ratings />
+      
     </body>
     </>
   );

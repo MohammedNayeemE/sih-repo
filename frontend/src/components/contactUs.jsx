@@ -1,6 +1,8 @@
 import { useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 
 const ContactUs = () => {
+  const navigate = useNavigate();
   return (
     <>
       <div className="bg-gray-100">
@@ -145,7 +147,7 @@ const ContactUs = () => {
                   </button>
                 </form>
                 <div className="mb-4">
-                  <button className="bg-blue-500 text-white py-2 px-4 rounded-md absolute bottom-0 right-10">
+                  <button className="bg-blue-500 text-white py-2 px-4 rounded-md absolute bottom-0 right-10" onClick={()=> navigate('/msg')}>
                     Send Message
                   </button>
                 </div>

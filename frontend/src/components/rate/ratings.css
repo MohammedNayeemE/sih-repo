@@ -5,7 +5,7 @@
   margin: 0;
   padding: 0;
 }
-
+/*
 :root {
   --bg: hsl(223, 10%, 90%);
   --fg: hsl(223, 10%, 10%);
@@ -27,7 +27,7 @@ body {
   height: 100vh;
   transition: background-color var(--trans-dur), color var(--trans-dur);
 }
-
+*/
 .rating {
   margin: auto;
 }
@@ -176,7 +176,17 @@ body {
 .rating__input-5:not(:checked):hover ~ .rating__label:nth-of-type(5) .rating__star-fill {
   fill: var(--yellow-t);
 }
-
+.area{
+ 
+    resize: none;
+    width: 100%;
+    border: 1px solid black;
+    padding: 5px;
+    border-radius: 2px;
+    height: 200px;
+    
+ 
+}
 .rating__sr {
   clip: rect(1px, 1px, 1px, 1px);
   overflow: hidden;

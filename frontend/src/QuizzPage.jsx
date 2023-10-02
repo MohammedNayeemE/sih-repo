@@ -1,5 +1,5 @@
 import { useState } from "react";
-import Ratings from "./components/Ratings";
+import Ratings from "./components/rate/Ratings";
 function QuizzPage(){
     const [question, setQuestion] =useState(false);
     return (

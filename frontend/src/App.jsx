@@ -10,6 +10,8 @@ import MainPage from './MainPage';
 import Team from './components/Team';
 import NotFound from './components/notfound';
 import ContactUs from './components/contactUs';
+import SuccesContact from './components/SuccesContact';
+import Ratings from './components/rate/Ratings';
 const App = () => {
   return (
     <>
@@ -28,6 +30,8 @@ const App = () => {
       <Route path ='/games' element= {<NotFound/>}/>
       <Route path='/help' element = {<NotFound/>}/>
       <Route path='/contact' element = {<ContactUs/>}/>
+      <Route path='/msg' element={<SuccesContact/>}/>
+      <Route path='/ratings' element={<Ratings/>}/>
     </Routes>
     </BrowserRouter>
     </>
