@@ -30,3 +30,52 @@
     background-color: #ddd;
     cursor: pointer;
 }
+
+.grid-container{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+.member{
+    margin: 20px;
+}
+.grid-container1{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+@media (max-width: 768px) {
+    .grid-container {
+      grid-template-columns: 1fr; /* Switch to a single column layout */
+    }
+    .grid-container1 {
+        grid-template-columns: 1fr; /* Switch to a single column layout */
+      }
+
+  }
+
+.h h3{
+    overflow: hidden; 
+    border-right: .1em solid rgb(21, 130, 248);
+    white-space: nowrap; 
+    margin: 0 auto; 
+    letter-spacing: .12em; 
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    
+    animation: 
+      typing 3.5s steps(40, end),
+      blink-caret .75s step-end infinite;
+  }
+  
+  
+  @keyframes typing {
+    from { width: 0 }
+    to { width: 100% }
+  }
+  
+  
+  @keyframes blink-caret {
+    from, to { border-color: transparent }
+    50% { border-color: rgb(49,46,129); }
+  }
+  

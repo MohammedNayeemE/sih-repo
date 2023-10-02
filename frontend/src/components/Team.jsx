@@ -1,30 +1,47 @@
 import React from 'react'
+import { useEffect  , useState} from 'react';
 import NavBar from './Navbar';
-import ProfileNavbar from './ProfileUpload';
+
+import './component.css';
+
 
 
 const Team = () => {
+  /*useEffect(() => {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('h');
+        } else {
+          entry.target.classList.remove('h');
+        }
+      });
+    });
+
+    
+    const hiddenElements = document.querySelectorAll('.n');
+    
+    hiddenElements.forEach((el) => observer.observe(el));
+    
+
+    
+    return () => {
+      hiddenElements.forEach((el) => observer.unobserve(el));
+      
+    };
+  }, []);
+  */
   
   return (
     
     <>
-  <header  class="fixed z-40 flex items-center justify-between w-screen px-4 overflow-hidden text-lg bg-white border-b-2 shadow-md h-header border-bsprime">
-  <div class="w-1/6">
-    <a class="text-3xl font-bold text-violet-500" href="/">Child Cronicles</a>
-  </div>
-  <nav class="flex flex-row items-center justify-center w-4/6 gap-10">
-    <span class="font-extrabold text-accent transition-colors rsease-in-out hover:text-accent active:text-blue-400" style={{cursor:'pointer'}} onClick={()=>navigate('/main')}>HOME</span>
-    <span class="font-extrabold text-black transition-colors ease-in-out hover:text-accent active:text-blue-400"  style={{cursor:'pointer'}} onClick={()=> navigate('/help')}>24/7 help</span>
-    <span class="font-extrabold text-black transition-colors ease-in-out hover:text-accent active:text-blue-400" style={{cursor:'pointer'}}  onClick={()=>navigate('/games')}>My Games</span>
-    <span class="font-extrabold text-black transition-colors ease-in-out hover:text-accent  active:text-blue-400" style={{cursor:'pointer'}} onClick={()=>navigate('/team')}>TEAM</span>
-  </nav>
-  <ProfileNavbar/>
-</header>
+    <NavBar/>
+    
     <section class="max-w-screen-xl mx-auto py-20 px-8 lg:px-10">
   <h2 class="text-4xl xl:text-5xl capitalize text-center text-indigo-900 font-bold">our team</h2>
   <hr class="mx-auto w-12 h-1 outline-0 border-0 bg-green-300 block mt-4 mb-6"></hr>
   <p class="text-center text-xl text-gray-800">Our team consists only of the best talents</p>
-
+  
   <div class="flex flex-col gap-6 mt-16">
     <div class="flex flex-col md:flex-row gap-6">
       <div class="w-full lg:w-1/4 rounded-3xl overflow-hidden "data-aos="fade-up">
@@ -80,6 +97,103 @@ const Team = () => {
 </section>
     </>
   )
-};
+  
+  {/*
+  <h2 class="text-4xl xl:text-5xl capitalize text-center text-indigo-900 font-bold">our team</h2>
+  <hr class="mx-auto w-12 h-1 outline-0 border-0 bg-green-300 block mt-4 mb-6"></hr>
+  <p class="text-center text-xl text-gray-800">Our team consists only of the best talents</p>
+  <div className='groupphoto' style={{display:'flex' , flexDirection:'column' , justifyContent:'center' , alignItems:'center' , height:'100vh' , width:'100%'}}>
+    <img src='src/components/groupphoto.jpeg' alt='groupphoto' style={{width:'50%' , margin:'30px'}}/>
+  </div>
+  <Roles role={'Leader'}/>
+  <Member name={'Abishek'}/>
+  
+  <Roles role={'Developers'}/>
+  <div className="grid-container">
+    <Member name={'Kaarthik'}/>
+    <Member name={'Albert'}/>
+    <Member name={'Nayeem'}/>
+  </div>
+  
+  <Roles role={'Designers'}/>
+  <div className="grid-container1">
+    <Member name={'Pavana'}/>
+    <Member name={'Sai'}/>
+  </div>
+  
+
+
+  
+  </>
+  )
+  const Member = ({name})=>{
+  const [showModal, setShowModal] = useState(false); 
+
+  const openModal = () => {
+    setShowModal(true);
+  }
+
+  const closeModal = () => {
+    setShowModal(false);
+  }
+
+  return(
+    <>
+    <div className="member" style={{display:'flex' , flexDirection:'column' , justifyContent:'center' , alignItems:'center'}} > 
+    <div className='pbox' style={{display:'flex' , flexDirection:'column' , justifyContent:'center'}}>
+    <img src='src/components/jk.jpeg' alt='jk' style={{width:'300px' , height:'250px' , border:'1px solid black' , borderRadius:'17px' , cursor:'pointer'}} onClick={openModal}/>
+    <div className="details" style={{display:'flex' , flexDirection:'column' , justifyContent:'center' , alignItems:'flex-start'}}>
+     <p style={{fontWeight:'bold' , margin:'8px' , fontSize:'20px' , cursor:'pointer'}} onClick={openModal}>{name}</p>
+     <div className='smedialinks' style={{display:'flex' , justifyContent:'flex-start' , width:'100%'}}>
+     <a href='#'><img src='src/components/instagram.png' alt='in' style={{width:'30px' , marginLeft:'5px'}}/></a>
+     <a href='#'><img src='src/components/instagram.png' alt='gh' style={{width:'30px' , marginLeft:'5px'}}/></a>
+     </div>
+    </div>
+    </div>
+  </div>
+
+  {showModal && <DetailModal closeModal={closeModal} Name = {name}/>}
+    </>
+  )
+}
+const Roles = ({role})=>{
+  return(
+    <>
+    <div style={{display:'flex' , justifyContent:'center' , width:'100%'}}>
+    <div style={{  fontSize:'60px' , color:'rgb(49,46,129)'}} className='n'>
+      <h3>{role}</h3>
+    </div>
+    </div>
+    </>
+  )
+}
+
+const DetailModal = ({closeModal , Name})=>{
+  return(
+    <>
+         <Modal show={true} onHide={closeModal} aria-labelledby="contained-modal-title-vcenter" centered>
+      <Modal.Header closeButton>
+        <Modal.Title id="contained-modal-title-vcenter">
+          Hi , I am {Name}
+        </Modal.Title>
+      </Modal.Header>
+      <Modal.Body>
+        <div style={{display:'flex' , flexDirection:'row' , alignItems:'center'}}>
+        <img src='src/components/jk.jpeg' alt='image' style={{width:'200px' , height:'200px' , border:'none' , borderRadius:'50%'}}/>
+        <p>
+          Cras mattis consectetur purus sit amet fermentum. Cras justo odio,
+          dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta ac
+          consectetur ac, vestibulum at eros.
+        </p>
+        </div>
+      </Modal.Body>
+     
+    </Modal>
+    </>
+  )
+}
+};*/}
+
+}
 
 export default Team;
